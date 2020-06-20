@@ -7,11 +7,14 @@ def submit():
     rad = float(entr.get())
     hei = float(enth.get())
 
-    v = math.pi*rad*rad*hei
-    v = round(v, 3)
+    vol = math.pi*rad*rad*hei
+    vol = round(vol, 3)
 
     output.config(state="normal")
-    output.insert(tk.INSERT, v)
+
+    outputValue = "Given\n:radius:"+str(rad)+" units\nheight:"+str(hei)+" units\nThe volume is:"+str(vol)+" units cubed\n\n"
+    output.delete(1.0, tk.END)
+    output.insert(tk.INSERT, outputValue)
     output.config(state="disabled")
 
 
