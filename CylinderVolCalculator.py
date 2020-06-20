@@ -24,7 +24,7 @@ class CylinderCalc:
         self.enth = tk.Entry(self.root)
         self.enth.pack()
 
-        self.btn = tk.Button(self.root, text="Calculate")
+        self.btn = tk.Button(self.root, text="Calculate", command=self.calculateVol)
         self.btn.pack()
 
         self.output = tk.Text(self.root, height=15, width=50, borderwidth=5, relief=tk.GROOVE)
@@ -32,5 +32,13 @@ class CylinderCalc:
         self.output.pack()
 
         self.root.mainloop()
+
+    def calculateVol(self):
+        print("Calculating Volume")
+        r = float(self.entr.get())
+        h = float(self.enth.get())
+        r = math.pi*r*r*h
+        print(r)
+
 
 cylindercalc = CylinderCalc()
