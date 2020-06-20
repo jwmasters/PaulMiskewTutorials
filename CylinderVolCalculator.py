@@ -37,8 +37,21 @@ class CylinderCalc:
         print("Calculating Volume")
         r = float(self.entr.get())
         h = float(self.enth.get())
-        r = math.pi*r*r*h
-        print(r)
+        v = math.pi*r*r*h
+        v = round(v, 3)
+        print(v)
+
+        outputValue = "Given formula pi * r2 * h\n"
+        outputValue = outputValue + "pi: " + str(round(math.pi, 3)) + "\n"
+        outputValue = outputValue + "radius: " + str(r) + " units\n"
+        outputValue = outputValue + "height: " + str(h) + " units\n"
+        outputValue = outputValue + "The volume is: " + str(v) + " units cubed."
+        self.output.configure(state="normal")
+        self.output.delete(1.0, tk.END)
+        self.output.insert(tk.INSERT, outputValue)
+        self.output.configure(state="disabled")
+
+
 
 
 cylindercalc = CylinderCalc()
